@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+class SingleProduct extends StatelessWidget {
+  final String image;
+  const SingleProduct({
+    Key? key,
+    required this.image,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.black12,
+            width: 1.5,
+          ),
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.white,
+        ),
+        child: Container(
+          height: 170,
+          padding: const EdgeInsets.only(left: 10, top: 20, right: 0),
+          child: Image.network(
+            image,
+            fit: BoxFit.fitHeight,
+            width: 170,
+          ),
+        ),
+      ),
+    );
+  }
+}
